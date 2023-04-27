@@ -8,7 +8,29 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: 'TeacherList',
+        name: 'TeacherList',
+        component: () => import('@/views/TeacherList.vue')
+      },
+      {
+        path: 'SubjectList',
+        name: 'SubjectList',
+        component: () => import('@/views/SubjectList.vue')
+      },
+      {
+        path: 'CourseList',
+        name: 'CourseList',
+        component: () => import('@/views/CourseList.vue')
+      },
+      {
+        path: 'AddCourse',
+        name: 'AddCourse',
+        component: () => import('@/views/AddCourse.vue')
+      }
+    ]
   },
   {
     path: '/about',
